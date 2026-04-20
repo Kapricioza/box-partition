@@ -54,3 +54,16 @@ bin/
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Dependency directories
+build/
+node_modules/
+
+# Logs error files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables files
+.env
