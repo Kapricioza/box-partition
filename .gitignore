@@ -37,5 +37,20 @@
 *.out
 *.app
 
-# debug information files
+# Debug information files
 *.dwo
+
+#binary folder
+bin/
+
+# VS Code user settings
+.vscode/
+
+# IntelliSense
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+
+# System files
+.DS_Store
+Thumbs.db
