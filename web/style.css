@@ -1,0 +1,48 @@
+body { 
+    margin: 0;
+    overflow: hidden; 
+    font-family: sans-serif; 
+    background: #1a1a1a; 
+    color: white; 
+}
+
+#ui-panel {
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 10; 
+    border: 1px solid #444;
+}
+
+#ui-panel h1 { 
+    font-size: 1.2em; 
+    margin-top: 0; 
+    color: #00d4ff; 
+}
+
+.info { 
+    font-size: 0.9em;
+    line-height: 1.5; 
+}
+.controls { 
+    display: flex; 
+    justify-content: space-between; 
+    margin: 10px 0; 
+}
+
+label { 
+    display: block; 
+    font-size: 0.8em; 
+    margin: 10px 0; 
+}
+
+input[type="range"] { 
+    width: 100%; 
+}
+canvas { 
+    display: block; 
+}
