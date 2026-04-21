@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Partitioner</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="ui-panel">
+        <h1> Box Partitioner</h1>
+        
+        <div class="input-group">
+            <label>Wymiary (m, n, k):</label>
+            <div class="inputs">
+                <input type="number" id="m" value="3" min="1">
+                <input type="number" id="n" value="3" min="1">
+                <input type="number" id="k" value="2" min="1">
+            </div>
+            <button id="run-btn">GENERUJ NOWE</button>
+        </div>
+
+        <div id="status">Gotowy</div>
+        <hr>
+
+        <div class="navigation">
+            <button id="prev-btn">◀</button>
+            <span id="current-info">0 / 0</span>
+            <button id="next-btn">▶</button>
+        </div>
+
+        <div class="clipping-controls">
+            <h3>Przekrój bryły </h3>
+            <label>Oś X: <input type="range" id="clip-x" step="0.1"></label>
+            <label>Oś Y: <input type="range" id="clip-y" step="0.1"></label>
+            <label>Oś Z: <input type="range" id="clip-z" step="0.1"></label>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

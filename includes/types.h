@@ -1,5 +1,5 @@
-#ifndef TyPES_H
-#define TyPES_H
+#ifndef TYPES_H
+#define TYPES_H
 
 #include <vector>
 #include <set>
