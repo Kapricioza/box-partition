@@ -32,7 +32,9 @@ int main(int argc, char* argv[]) {
     Partition currentP;
     vector<Placement> currentL;
 
-    solver.solve(m, n, k, grid, currentP, currentL);
+    int currentEmptyCount = m * n * k;
+
+    solver.solve(m, n, k, grid, currentP, currentL, currentEmptyCount);
 
     Exporter::exportToJSON("web/data/results.json",m,n,k,solver);
 
