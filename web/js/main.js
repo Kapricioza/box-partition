@@ -20,12 +20,12 @@ function init() {
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.localClippingEnabled = true; // Włączenie przekrojów
+    renderer.localClippingEnabled = true; 
     document.getElementById('canvas-container').appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     
-    // Oświetlenie
+    
     scene.add(new THREE.AmbientLight(0xffffff, 0.6));
     const light = new THREE.PointLight(0xffffff, 1);
     light.position.set(20, 20, 20);
@@ -44,7 +44,7 @@ async function loadJSON() {
         if (!res.ok) throw new Error("Brak pliku danych");
         allData = await res.json();
         
-        // Aktualizacja suwaków pod nowe wymiary
+        
         document.getElementById('clip-x').max = allData.m;
         document.getElementById('clip-y').max = allData.n;
         document.getElementById('clip-z').max = allData.k;
@@ -73,10 +73,10 @@ function renderCurrent() {
         });
 
         const mesh = new THREE.Mesh(geo, mat);
-        // Centrowanie: Three.js ustawia środek boxa w (0,0,0)
+        
         mesh.position.set(block.x + block.dx/2, block.y + block.dy/2, block.z + block.dz/2);
 
-        // Krawędzie dla kontrastu
+        
         const wire = new THREE.LineSegments(
             new THREE.EdgesGeometry(geo),
             new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 })
@@ -87,7 +87,7 @@ function renderCurrent() {
 }
 
 function setupEventListeners() {
-    // PRZYCISK GENERUJ: wysyła m, n, k do server.js
+    
     document.getElementById('run-btn').onclick = async () => {
         const btn = document.getElementById('run-btn');
         const status = document.getElementById('status');
@@ -108,9 +108,9 @@ function setupEventListeners() {
                 body: JSON.stringify(payload)
             });
             if (res.ok) {
-                currentIdx = 0; // Resetuj indeks po generowaniu
+                currentIdx = 0; 
                 status.innerText = "Zaktualizowano!";
-                await loadJSON(); // Przeładuj widok
+                await loadJSON(); 
             }
         } catch (e) {
             status.innerText = "Błąd serwera!";
@@ -119,7 +119,7 @@ function setupEventListeners() {
         }
     };
 
-    // Nawigacja
+    
     document.getElementById('next-btn').onclick = () => {
         if (!allData || allData.partitions.length === 0) return;
         currentIdx = (currentIdx + 1) % allData.partitions.length;
@@ -131,7 +131,7 @@ function setupEventListeners() {
         renderCurrent();
     };
 
-    // Suwaki przekrojów
+    
     document.getElementById('clip-x').oninput = (e) => clippingPlanes[0].constant = e.target.value;
     document.getElementById('clip-y').oninput = (e) => clippingPlanes[1].constant = e.target.value;
     document.getElementById('clip-z').oninput = (e) => clippingPlanes[2].constant = e.target.value;
@@ -143,7 +143,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// Skalowanie okna
+
 window.onresize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
