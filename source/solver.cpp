@@ -3,40 +3,44 @@
 using namespace std;
 
 
-void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, 
-           Partition& currentP, vector<Placement>& currentL) {
+void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, Partition& currentP, vector<Placement>& currentL, int currentEmptyCount) {
     
-    int fx = -1, fy = -1, fz = -1;
-    int emptyCount = 0;
-    
-    
-    for(int i=0; i<m; ++i)
-        for(int j=0; j<n; ++j)
-            for(int l=0; l<k; ++l) {
-                if(grid[i][j][l] == 0) {
-                    emptyCount++;
-                    if(fx == -1) { fx=i; fy=j; fz=l; }
-                }
-            }
-
-    if(fx == -1) { 
-        if (partitions.find(currentP) == partitions.end()) {
+    if (currentEmptyCount == 0) {
+        if (partitions.find(currentP) == partitions.end()){
             partitions.insert(currentP);
             exampleLayouts[currentP] = currentL;
         }
         return;
     }
 
+    int fx = -1, fy = -1, fz = -1;
     
+    // Szukaj pierwszej pustej komórki
+    for(int i=0; i<m && fx == -1; ++i) {
+        for(int j=0; j<n && fx == -1; ++j) {
+            for(int l=0; l<k && fx == -1; ++l) {
+                if(grid[i][j][l] == 0) {
+                    fx = i; fy = j; fz = l;
+                }
+            }
+        }
+    }
+
+    if (fx == -1) {
+        return;
+    }
+
     int maxA = m - fx;
     int maxB = n - fy;
     int maxC = k - fz;
 
-    for(int a=1; a<=maxA; ++a) {
-        for(int b=1; b<=maxB; ++b) {
-            for(int c=1; c<=maxC; ++c) {
+    for(int a=maxA; a>=1; --a) {
+        for(int b=maxB; b>=1; --b) {
+            for(int c=maxC; c>=1; --c) {
                 
-                if(a * b * c > emptyCount) break;
+                int blockSize = a * b * c;
+                // Jeśli blok jest za duży, przerwij pętlę c (zmniejsz b i restartuj c)
+                if(blockSize > currentEmptyCount) break; 
 
                 bool ok = true;
                 for(int i=fx; i<fx+a && ok; ++i)
@@ -45,6 +49,7 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid,
                             if(grid[i][j][l] != 0) ok = false;
 
                 if(ok) {
+                    // Zaznacz blok
                     for(int i=fx; i<fx+a; ++i)
                         for(int j=fy; j<fy+b; ++j)
                             for(int l=fz; l<fz+c; ++l) grid[i][j][l] = 1;
@@ -52,8 +57,9 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid,
                     currentP.insert(Block(a, b, c));
                     currentL.push_back({fx, fy, fz, a, b, c});
                     
-                    solve(m, n, k, grid, currentP, currentL);
+                    solve(m, n, k, grid, currentP, currentL, currentEmptyCount - blockSize);
 
+                    // Cofnij
                     currentL.pop_back();
                     currentP.erase(currentP.find(Block(a, b, c)));
                     for(int i=fx; i<fx+a; ++i)
