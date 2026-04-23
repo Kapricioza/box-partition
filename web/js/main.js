@@ -94,6 +94,7 @@ function setupEventListeners() {
     document.getElementById('run-btn').onclick = async () => {
         const btn = document.getElementById('run-btn');
         const status = document.getElementById('status');
+        const spinner = document.getElementById('loading-spinner');
         
         const payload = {
             m: parseInt(document.getElementById('m').value),
@@ -102,6 +103,7 @@ function setupEventListeners() {
         };
 
         status.innerText = "Backend pracuje...";
+        spinner.classList.remove('hidden');
         btn.disabled = true;
 
         try {
@@ -119,6 +121,7 @@ function setupEventListeners() {
             status.innerText = "Błąd serwera!";
         } finally {
             btn.disabled = false;
+            spinner.classList.add('hidden');
         }
     };
 
