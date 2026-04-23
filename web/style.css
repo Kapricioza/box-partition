@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body { 
     margin: 0;
     overflow: hidden; 
-    font-family: sans-serif; 
+    font-family: "Roboto", sans-serif; 
     background: #1a1a1a; 
     color: white; 
 }
-
+h2 { 
+    font-size: 0.9em; 
+    color: #ff6666; 
+    margin-top: 0; 
+}
 #ui-panel {
     position: absolute; 
     top: 20px;
@@ -18,12 +23,35 @@ body {
     border: 1px solid #444;
 }
 
+.input-group{ 
+    margin-bottom: 10px;
+}
+
 #ui-panel h1 { 
     font-size: 1.2em; 
     margin-top: 0; 
     color: #00d4ff; 
 }
-
+#m, #n, #k { 
+    width: 100%; 
+    padding: 5px; 
+    margin-top: 5px; 
+    background: #333; 
+    border: 1px solid #555; 
+    color: white; 
+    border-radius: 4px;
+}
+#run-btn{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #00d4ff;
+    border: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
 .info { 
     font-size: 0.9em;
     line-height: 1.5; 
@@ -40,9 +68,30 @@ label {
     margin: 10px 0; 
 }
 
+#results-summary {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 255, 150, 0.1));
+    border: 2px solid #00d4ff;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#partition-count-display {
+    font-size: 1.1em;
+    color: #00ff96;
+    font-weight: 500;
+}
+
+#partition-count-display strong {
+    color: #00d4ff;
+    font-size: 1.3em;
+}
+
 input[type="range"] { 
     width: 100%; 
 }
+
 canvas { 
     display: block; 
 }

@@ -15,7 +15,7 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, Parti
 
     int fx = -1, fy = -1, fz = -1;
     
-    // Szukaj pierwszej pustej komórki
+    
     for(int i=0; i<m && fx == -1; ++i) {
         for(int j=0; j<n && fx == -1; ++j) {
             for(int l=0; l<k && fx == -1; ++l) {
@@ -39,7 +39,7 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, Parti
             for(int c=maxC; c>=1; --c) {
                 
                 int blockSize = a * b * c;
-                // Jeśli blok jest za duży, przerwij pętlę c (zmniejsz b i restartuj c)
+                
                 if(blockSize > currentEmptyCount) break; 
 
                 bool ok = true;
@@ -49,7 +49,7 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, Parti
                             if(grid[i][j][l] != 0) ok = false;
 
                 if(ok) {
-                    // Zaznacz blok
+                    
                     for(int i=fx; i<fx+a; ++i)
                         for(int j=fy; j<fy+b; ++j)
                             for(int l=fz; l<fz+c; ++l) grid[i][j][l] = 1;
@@ -59,7 +59,7 @@ void Solver::solve(int m, int n, int k, vector<vector<vector<int>>>& grid, Parti
                     
                     solve(m, n, k, grid, currentP, currentL, currentEmptyCount - blockSize);
 
-                    // Cofnij
+                    
                     currentL.pop_back();
                     currentP.erase(currentP.find(Block(a, b, c)));
                     for(int i=fx; i<fx+a; ++i)
