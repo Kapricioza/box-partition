@@ -24,11 +24,19 @@ Przed uruchomieniem upewnij się, że masz zainstalowane:
 
 ##  Instalacja
 
-### Krok 1: Klonuj repozytorium
+### Krok 1: Pobierz repozytorium
+
+**Opcja A: Za pomocą Git** (jeśli masz zainstalowany Git)
 ```bash
 git clone https://github.com/Kapricioza/box-partition
 cd box-partition
 ```
+
+**Opcja B: Pobierz jako ZIP** (bez Git)
+1. Przejdź na https://github.com/Kapricioza/box-partition
+2. Kliknij zielony przycisk **"Code"** → **"Download ZIP"**
+3. Rozpakuj pobrany plik
+4. Otwórz terminal w folderze `box-partition`
 
 ### Krok 2: Zainstaluj zależności Node.js
 ```bash
