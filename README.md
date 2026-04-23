@@ -14,7 +14,7 @@ Program do generowania i wizualizacji partycji prostopadłościanu (box-a) na mn
 Przed uruchomieniem upewnij się, że masz zainstalowane:
 - **Node.js** (v14+) - [Pobierz tutaj](https://nodejs.org/)
 - **C++ Compiler** (MSVC, GCC lub Clang)
-- **Python** (opcjonalnie, do build systemów)
+
 
 ##  Instalacja
 
