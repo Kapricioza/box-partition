@@ -44,6 +44,8 @@ npm install
 ```
 
 #### Opcja B: Ręcznie z wiersza poleceń (Windows)
+> **Ważne**: Otwórz **Developer Command Prompt for Visual Studio** (dcmdp), a nie zwykły PowerShell/CMD
+
 ```bash
 cd source
 cl.exe /Zi /EHsc /nologo /Fe.. \bin\main.exe main.cpp solver.cpp exporter.cpp /I.. \includes
