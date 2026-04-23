@@ -20,7 +20,7 @@ Przed uruchomieniem upewnij się, że masz zainstalowane:
 
 ### Krok 1: Klonuj repozytorium
 ```bash
-git clone <repo-url>
+git clone https://github.com/Kapricioza/box-partition
 cd box-partition
 ```
 
