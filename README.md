@@ -34,7 +34,7 @@ cd box-partition
 
 **Opcja B: Pobierz jako ZIP** (bez Git)
 1. Przejdź na https://github.com/Kapricioza/box-partition
-2. Kliknij zielony przycisk **"Code"** → **"Download ZIP"**
+2. Kliknij przycisk **"Code"** → **"Download ZIP"**
 3. Rozpakuj pobrany plik
 4. Otwórz terminal w folderze `box-partition`
 
