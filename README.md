@@ -11,7 +11,9 @@ Program do generowania i wizualizacji partycji prostopadłościanu (box-a) na mn
 
 ## Zasady partycjonowania
 
-Multizbiór: Partycja to multizbiór klocków. Dwa ułożenia są takie same, jeśli zestaw klocków jest identyczny. * Rotacja: Klocek a×b×c to ten sam obiekt co b×a×c czy c×b×a. * Weryfikacja: Każda partycja musi spełniać warunek objętościowy (∑Vi​=mnk) oraz posiadać fizyczne ułożenie .
+- **Multizbiór**: Partycja to multizbiór klocków. Dwa ułożenia są takie same, jeśli zestaw klocków jest identyczny.
+- **Rotacja**: Klocek a×b×c to ten sam obiekt co b×a×c czy c×b×a.
+- **Weryfikacja**: Każda partycja musi spełniać warunek objętościowy ($\sum V_i = mnk$) oraz posiadać fizyczne ułożenie (tiling).
 
 ##  Wymagania
 
