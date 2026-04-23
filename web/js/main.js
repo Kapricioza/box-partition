@@ -49,6 +49,9 @@ async function loadJSON() {
         document.getElementById('clip-y').max = allData.n;
         document.getElementById('clip-z').max = allData.k;
         
+        
+        document.getElementById('partition-count-display').innerHTML = `Znaleziono partycji: <strong>${allData.total_partitions}</strong>`;
+        
         renderCurrent();
     } catch (err) {
         document.getElementById('status').innerText = "Czekam na dane...";
