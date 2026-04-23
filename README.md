@@ -40,7 +40,7 @@ npm install
 #### Opcja B: Ręcznie z wiersza poleceń (Windows)
 ```bash
 cd source
-cl.exe /Zi /EHsc /nologo /Fe..\bin\main.exe main.cpp solver.cpp exporter.cpp /I..\includes
+cl.exe /Zi /EHsc /nologo /Fe.. \bin\main.exe main.cpp solver.cpp exporter.cpp /I.. \includes
 cd ..
 ```
 
