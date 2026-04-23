@@ -2,21 +2,21 @@
 
 Program do generowania i wizualizacji partycji prostopadłościanu (box-a) na mniejsze bloki.
 
-## 📋 Opis
+##  Opis
 
 **Box Partition** to aplikacja składająca się z:
 - **Backend C++**: Program optymalizacyjny generujący wszystkie możliwe partycje prostopadłościanu o wymiarach m×n×k
 - **Serwer Node.js**: API Express, które uruchamia program C++ i serwuje interfejs webowy
 - **Frontend Web**: Interaktywna wizualizacja 3D partycji za pomocą Three.js
 
-## 🛠️ Wymagania
+##  Wymagania
 
 Przed uruchomieniem upewnij się, że masz zainstalowane:
 - **Node.js** (v14+) - [Pobierz tutaj](https://nodejs.org/)
 - **C++ Compiler** (MSVC, GCC lub Clang)
 - **Python** (opcjonalnie, do build systemów)
 
-## 📦 Instalacja
+##  Instalacja
 
 ### Krok 1: Klonuj repozytorium
 ```bash
@@ -67,25 +67,25 @@ Serwer uruchomi się na `http://localhost:3000`
 4. Czekaj na wygenerowanie partycji
 5. Nawiguj strzałkami i przeglądaj wizualizację 3D
 
-## 🎮 Sterowanie 3D
+##  Sterowanie 3D
 
 - **Mysz**: Obracaj model (lewy przycisk) i przybliż/oddal (scroll)
 - **Suwaki**: Przecinaj bryłę wzdłuż osi X, Y, Z
 
-## 📊 Dane wyjściowe
+##  Dane wyjściowe
 
 Wyniki są zapisywane w pliku `web/data/results.json` z informacjami o:
 - Wymiarach prostopadłościanu
 - Liczbie znalezionych partycji
 - Układzie bloków dla każdej partycji
 
-## ⚠️ Uwagi
+##  Uwagi
 
 - Większe wartości (m, n, k) mogą znacząco zwiększyć czas obliczeń
 - Program przechowuje wszystkie partycje w pamięci
 - Kompilacja wymaga zainstalowanego kompilatora C++
 
-## 📁 Struktura projektu
+##  Struktura projektu
 
 ```
 box-partition/
@@ -111,6 +111,6 @@ box-partition/
 └── README.md
 ```
 
-## 📝 Licencja
+##  Licencja
 
 Projekt dostępny na licencji MIT
