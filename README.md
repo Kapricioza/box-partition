@@ -51,7 +51,7 @@ g++ -o ../bin/main main.cpp solver.cpp exporter.cpp -I../includes -std=c++17
 cd ..
 ```
 
-## 🚀 Uruchomienie
+##  Uruchomienie
 
 ### Uruchom serwer
 ```bash
